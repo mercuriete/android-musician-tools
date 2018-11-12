@@ -1,16 +1,15 @@
-package org.mercuriete.musiciantools
+package org.mercuriete.musiciantools.services
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
+import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 import kotlinx.android.synthetic.main.content_menu.*
-import org.mercuriete.musiciantools.services.BPMCalculatorServiceImpl
+import org.mercuriete.musiciantools.R
+import javax.inject.Inject
 
-class MenuActivity : AppCompatActivity() {
-    private var bpmCalculatorService = BPMCalculatorServiceImpl()
+class MenuActivity : DaggerAppCompatActivity() {
+    @Inject
+    lateinit var bpmCalculatorService: BPMCalculatorService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
