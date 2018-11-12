@@ -7,7 +7,7 @@ import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 import org.mercuriete.musiciantools.MusicianToolsApp
-import org.mercuriete.musiciantools.services.BPMCalculatorModule
+import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorModule
 
 /**
  * This is a Dagger component. Refer to [MusicianToolsApp] for the list of Dagger components
