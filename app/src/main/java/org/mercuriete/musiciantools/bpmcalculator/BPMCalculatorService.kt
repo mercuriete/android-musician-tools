@@ -1,4 +1,4 @@
-package org.mercuriete.musiciantools.services
+package org.mercuriete.musiciantools.bpmcalculator
 
 interface BPMCalculatorService {
     fun beat()

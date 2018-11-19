@@ -1,4 +1,4 @@
-package org.mercuriete.musiciantools.services
+package org.mercuriete.musiciantools.bpmcalculator
 
 import org.junit.Assert
 import org.junit.Test
