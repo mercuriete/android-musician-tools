@@ -2,7 +2,8 @@ package org.mercuriete.musiciantools.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorActivity
+import org.mercuriete.musiciantools.MainActivity
+import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorModule
 
 
 /**
@@ -14,7 +15,9 @@ import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorActivity
  */
 @Module
 abstract class ActivityBindingModule {
-    @ActivityScoped
-    @ContributesAndroidInjector(modules = [ApplicationModule::class])
-    internal abstract fun menuActivity(): BPMCalculatorActivity
+    @ContributesAndroidInjector(modules =
+    [
+        BPMCalculatorModule::class
+    ])
+    internal abstract fun mainActivity(): MainActivity
 }
