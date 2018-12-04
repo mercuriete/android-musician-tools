@@ -1,21 +1,28 @@
 package org.mercuriete.musiciantools.bpmcalculator
 
-import dagger.Provides
 import dagger.Module
-import javax.inject.Singleton
+import dagger.Provides
+import dagger.android.ContributesAndroidInjector
+
 
 @Module
-class BPMCalculatorModule {
+abstract class BPMCalculatorModule {
 
-    @Provides
-    fun bpmCalculatorServiceProvider(): BPMCalculatorService {
-        return BPMCalculatorServiceImpl()
+    @Module
+    companion object {
+        @JvmStatic
+        @Provides
+        fun bpmCalculatorServiceProvider(): BPMCalculatorService {
+            return BPMCalculatorServiceImpl()
+        }
+
+        @JvmStatic
+        @Provides
+        fun bpmCalculatorPresenterProvider(bpmCalculatorService: BPMCalculatorService): BPMCalculatorContract.Presenter {
+            return BPMCalculatorPresenter(bpmCalculatorService)
+        }
     }
 
-    @Singleton
-    @Provides
-    fun bpmCalculatorPresenterProvider(bpmCalculatorService: BPMCalculatorService): BPMCalculatorContract.Presenter {
-        return BPMCalculatorPresenter(bpmCalculatorService)
-    }
-
+    @ContributesAndroidInjector
+    abstract fun bpmCalculatorFragment(): BPMCalculatorFragment
 }

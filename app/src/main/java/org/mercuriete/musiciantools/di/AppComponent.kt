@@ -5,9 +5,8 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
-import javax.inject.Singleton
 import org.mercuriete.musiciantools.MusicianToolsApp
-import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorModule
+import javax.inject.Singleton
 
 /**
  * This is a Dagger component. Refer to [MusicianToolsApp] for the list of Dagger components
@@ -25,8 +24,7 @@ import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorModule
 [
     AndroidSupportInjectionModule::class,
     ApplicationModule::class,
-    ActivityBindingModule::class,
-    BPMCalculatorModule::class
+    ActivityBindingModule::class
 ])
 interface AppComponent : AndroidInjector<MusicianToolsApp> {
     @Component.Builder
