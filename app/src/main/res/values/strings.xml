@@ -3,4 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="tap_me">Tap me</string>
     <string name="hello">Hello World!</string>
+    <string name="bmp_calculator">BPM Calculator</string>
+    <string name="about">About</string>
+    <string name="about_me">This app is awesome!</string>
 </resources>

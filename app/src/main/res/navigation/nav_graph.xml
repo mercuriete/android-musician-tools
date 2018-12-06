@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/BPMCalculatorFragment">
+
+    <fragment
+        android:id="@+id/BPMCalculatorFragment"
+        android:name="org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorFragment"
+        android:label="BPMCalculatorFragment" />
+    <fragment
+        android:id="@+id/AboutMeFragment"
+        android:name="org.mercuriete.musiciantools.aboutme.AboutMeFragment"
+        android:label="AboutMeFragment" />
+</navigation>

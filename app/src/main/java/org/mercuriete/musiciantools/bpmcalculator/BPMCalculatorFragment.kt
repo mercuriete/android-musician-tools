@@ -37,9 +37,9 @@ class BPMCalculatorFragment @Inject constructor() : DaggerFragment(), BPMCalcula
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         presenter.dropView()  //prevent leaking activity in
         // case presenter is orchestrating a long running task
+        super.onDestroy()
     }
 
 }

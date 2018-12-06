@@ -3,8 +3,8 @@ package org.mercuriete.musiciantools.di
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import org.mercuriete.musiciantools.MainActivity
+import org.mercuriete.musiciantools.aboutme.AboutMeModule
 import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorModule
-
 
 /**
  * We want Dagger.Android to create a Subcomponent which has a parent Component of whichever module ActivityBindingModule is on,
@@ -15,9 +15,12 @@ import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorModule
  */
 @Module
 abstract class ActivityBindingModule {
-    @ContributesAndroidInjector(modules =
-    [
-        BPMCalculatorModule::class
-    ])
+    @ContributesAndroidInjector(
+        modules =
+        [
+            BPMCalculatorModule::class,
+            AboutMeModule::class
+        ]
+    )
     internal abstract fun mainActivity(): MainActivity
 }
