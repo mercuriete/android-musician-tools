@@ -9,6 +9,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7.1"
+        classpath "com.dicedmelon.gradle:jacoco-android:0.1.4"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,4 +26,27 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+apply plugin: "org.sonarqube"
+
+//sonar configuration
+sonarqube {
+    properties {
+        property "sonar.sources", "src/main/java"
+        property "sonar.binaries", "build/intermediates/classes/debug"
+        property "sonar.java.binaries", "build/intermediates/classes/debug"
+        property "sonar.tests", "src/test/java, src/androidTest/java"
+        property "sonar.java.test.binaries", "build/intermediates/classes/debug"
+
+        def unit = fileTree(dir: project.projectDir, includes: ['**/*.exec']).files
+        def ui = fileTree(dir: project.projectDir, includes: ['**/*.ec']).files
+        unit.addAll(ui)
+        def files = unit.join(", ")
+
+        property "sonar.jacoco.reportPaths", files
+        property "sonar.java.coveragePlugin", "jacoco"
+        property "sonar.junit.reportsPath", "build/test-results/testDebugUnitTest"
+        property "sonar.android.lint.report", "build/reports/lint-results.xml"
+    }
 }

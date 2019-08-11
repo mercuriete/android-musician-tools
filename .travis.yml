@@ -3,6 +3,12 @@ language: android
 jdk:
   - oraclejdk8
 
+addons:
+    sonarcloud:
+        organization: "mercuriete-github"
+        token:
+            secure: "J7idbZtokNuLekQRIsCM56XxZhjXVx3Zp1t4soNI/booqdqSNvobTYy3lHp0/krf8qfcSMvtfBfRjBSdoZ32GxG081i0mYQblsYMTd7UmW/H0EPsWDLvmOI7D7YKdMtHabN7mMgX5zBvsVnh5d7oqh7LhuiahtBbZMYD5lm0KxTmmV/6KqfQQV5/P+kvdBpSrFJ9XQqrrKdvniBWkAeycPjKFay+NAvvuT5cYW0RXaBdmxDYV7EhPNL5cSCspnpWKNAtupMZP5WeiPOsWyQhjZjCn+cQLd1VE5SX7Z3/cy6Yk3qNagamhf82+QEnue4Q6HRyUkNicS6j/S24Y1AeoBM+uJ5bPGAX8k7ISTojT7usaCeUi1zSsvA2Qu28oJAMVo9emvj5WN9tY08FieFQ2pQNXX4SxTEAYWpMlx2vO+SyHrCoSZnzwTxL/AHamqEhqx2bLQXGMJMTOqtbNBCxQPTweq6Pj6lQGYdSpcuck04Ih3t+gFjBPAjcPyIlwiStXTSu6joQYV2dMM6OUxjRrWiu5RAb/4vVMlOrW7TQ//Jo0KQ1nZ55sV2/prtGkcF5oM4DRiZS7RXl2qBKOVrUQ7WMHrMD8ti0ov2ATxUcs5Htrho4lRffFNQuF2BbAUDmpEIFsvuMolijVyPC2OTF52djZjog8MMBLoX8y8pkIeU="
+
 android:
   components:
     # - platform-tools-27.0.2
@@ -32,6 +38,6 @@ before_install:
   #- adb shell input keyevent 82 &
 
 script:
-  - ./gradlew lint test # Local unit test
+  - ./gradlew lint test jacocoTestReport sonarqube # Local unit test
   # Temporarily disable emulator based tests
   # - ./gradlew connectedAndroidTest # Instrumented unit test
