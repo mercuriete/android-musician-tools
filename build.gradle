@@ -37,20 +37,8 @@ sonarqube {
         property "sonar.projectVersion", project.version_name
         property "sonar.sourceEncoding", "UTF-8"
 
-        //property "sonar.sources", "app/src/main/java"
-        //property "sonar.binaries", "app/build/intermediates/app_classes/debug"
-        //property "sonar.java.binaries", "app/build/intermediates/app_classes/debug"
-        //property "sonar.tests", "app/src/test/java, app/src/androidTest/java"
-        //property "sonar.java.test.binaries", "app/build/intermediates/app_classes/debug"
-
-        def unit = fileTree(dir: project.projectDir, includes: ['**/*.exec']).files
-        def ui = fileTree(dir: project.projectDir, includes: ['**/*.ec']).files
-        unit.addAll(ui)
-        def files = unit.join(", ")
-
-        property "sonar.jacoco.reportPaths", files
-        property "sonar.java.coveragePlugin", "jacoco"
-        property "sonar.junit.reportsPath", "app/build/test-results/testDebugUnitTest"
-        property "sonar.android.lint.report", "app/build/reports/lint-results.xml"
+        property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/jacocoTestDebugUnitTestReport/jacocoTestDebugUnitTestReport.xml"
+        property "sonar.junit.reportsPath", "build/test-results/testDebugUnitTest"
+        property "sonar.android.lint.report", "build/reports/lint-results.xml"
     }
 }
