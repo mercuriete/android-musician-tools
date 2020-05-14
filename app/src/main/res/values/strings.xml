@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">MusicianTools</string>
-    <string name="action_settings">Settings</string>
     <string name="tap_me">Tap me</string>
     <string name="hello">Hello World!</string>
     <string name="bmp_calculator">BPM Calculator</string>

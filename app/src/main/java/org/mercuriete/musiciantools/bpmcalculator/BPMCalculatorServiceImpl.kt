@@ -28,8 +28,7 @@ class BPMCalculatorServiceImpl : BPMCalculatorService {
         //divided by number of beats between them
         val period = (timestamps[timestamps.size - 1].toDouble() - timestamps[0].toDouble()) / (timestamps.size - 1).toDouble()
         //bpm is inverse of period in seconds multiplied by 60
-        val bpm = 60 * 1E9 / period
-        return bpm
+        return 60 * 1E9 / period
     }
 
     override fun clear() {
