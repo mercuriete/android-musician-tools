@@ -13,16 +13,16 @@ class BPMCalculatorServiceImpl : BPMCalculatorService {
 
     override fun beat() {
         timestamps += System.nanoTime()
+        //only store maxTimestamps samples in a FIFO queue
+        if (timestamps.size > maxTimestamps) {
+            timestamps.removeAt(0)
+        }
     }
 
     override fun getBPM(): Double {
         //not enough timestamps to calculate deltas
         if (timestamps.size <= 1) {
             return 0.0
-        }
-        //only store maxTimestamps samples in a FIFO queue
-        if (timestamps.size >= maxTimestamps) {
-            timestamps.removeAt(0)
         }
         //the period is the elapsed time between the last and first beat
         //divided by number of beats between them
