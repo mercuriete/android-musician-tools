@@ -28,7 +28,7 @@ android {
         applicationId "org.mercuriete.musiciantools"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 2
+        versionCode project.version_code
         versionName project.version_name
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
