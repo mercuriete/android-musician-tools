@@ -1,5 +1,3 @@
 package org.mercuriete.musiciantools
 
-interface BaseView<T> {
-
-}
+interface BaseView<T>
