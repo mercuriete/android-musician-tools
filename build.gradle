@@ -15,6 +15,7 @@ buildscript {
     }
 
     ext.kotlin_version = '1.3.72'
+    ext.dagger_version = '2.20'
     ext.version_name = getVersionName()
     ext.version_code = getVersionCode()
     repositories {
