@@ -30,7 +30,7 @@ android {
         targetSdkVersion 29
         versionCode project.version_code
         versionName project.version_name
-        testInstrumentationRunner "org.mercuriete.musiciantools.test.CucumberTestRunner"
+        testInstrumentationRunner "cucumber.api.android.CucumberAndroidJUnitRunner"
     }
     buildTypes {
         debug {
