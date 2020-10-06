@@ -23,11 +23,11 @@ tasks.withType(Test) {
 }
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "org.mercuriete.musiciantools"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode project.version_code
         versionName project.version_name
         testInstrumentationRunner "cucumber.api.android.CucumberAndroidJUnitRunner"
