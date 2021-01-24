@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import dagger.android.support.DaggerFragment
+import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.bpm_calculator_fragment.*
 import org.mercuriete.musiciantools.R
 import javax.inject.Inject
 
-
-class BPMCalculatorFragment @Inject constructor() : DaggerFragment(), BPMCalculatorContract.View {
+@AndroidEntryPoint
+class BPMCalculatorFragment @Inject constructor() : Fragment(), BPMCalculatorContract.View {
 
     @Inject
     lateinit var presenter: BPMCalculatorContract.Presenter
@@ -19,8 +20,10 @@ class BPMCalculatorFragment @Inject constructor() : DaggerFragment(), BPMCalcula
         bpmText.text = bpm
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.bpm_calculator_fragment, container, false)
     }
 
