@@ -1,12 +1,12 @@
 package org.mercuriete.musiciantools.test
 
-import androidx.test.rule.ActivityTestRule
+import androidx.test.core.app.launchActivity
 import org.mercuriete.musiciantools.MainActivity
 import org.mercuriete.musiciantools.R
 
 class MainActivityScreenRobot : GenericRobot() {
-    fun launchMainActivityScreen(testRule: ActivityTestRule<MainActivity>) {
-        testRule.launchActivity(null)
+    fun launchMainActivityScreen() {
+        launchActivity<MainActivity>()
     }
 
     fun canSeeAMessageOnBpmText(text: String) {
