@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.bpm_calculator_fragment.*
-import org.mercuriete.musiciantools.R
+import org.mercuriete.musiciantools.databinding.BpmCalculatorFragmentBinding
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -16,20 +15,26 @@ class BPMCalculatorFragment @Inject constructor() : Fragment(), BPMCalculatorCon
     @Inject
     lateinit var presenter: BPMCalculatorContract.Presenter
 
+    private var _binding: BpmCalculatorFragmentBinding? = null
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
+
     override fun showBPM(bpm: String) {
-        bpmText.text = bpm
+        binding.bpmText.text = bpm
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.bpm_calculator_fragment, container, false)
+    ): View {
+        _binding = BpmCalculatorFragmentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        button.setOnClickListener {
+        binding.button.setOnClickListener {
             presenter.addBeat()
         }
     }
@@ -40,9 +45,12 @@ class BPMCalculatorFragment @Inject constructor() : Fragment(), BPMCalculatorCon
     }
 
     override fun onDestroy() {
-        presenter.dropView()  //prevent leaking activity in
-        // case presenter is orchestrating a long running task
         super.onDestroy()
+        // prevent leaking activity in
+        // case presenter is orchestrating a long running task
+        presenter.dropView()
+        // prevent memory leak of view binding
+        _binding = null
     }
 
 }
