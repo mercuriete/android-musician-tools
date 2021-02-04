@@ -3,7 +3,7 @@ package org.mercuriete.musiciantools.di
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorContract
 import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorPresenter
 import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorService
@@ -16,7 +16,7 @@ import org.mercuriete.musiciantools.bpmcalculator.BPMCalculatorServiceImpl
  * in Hilt's ApplicationComponent.
  */
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 object AppModule {
 
     @Provides
