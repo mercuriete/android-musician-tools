@@ -3,6 +3,9 @@ language: android
 jdk:
   - oraclejdk8
 
+git:
+  depth: false
+
 addons:
     sonarcloud:
         organization: "mercuriete-github"
@@ -38,6 +41,6 @@ before_install:
   #- adb shell input keyevent 82 &
 
 script:
-  - ./gradlew lint test jacocoTestReport sonarqube # Local unit test
+  - ./gradlew -D sonar.scanner.force-deprecated-java-version-grace-period=true lint test jacocoTestReport sonarqube # Local unit test
   # Temporarily disable emulator based tests
   # - ./gradlew connectedAndroidTest # Instrumented unit test
