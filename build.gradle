@@ -14,7 +14,7 @@ buildscript {
         return new Date().format('yy.MM.dd')
     }
 
-    ext.kotlin_version = '1.4.21-2'
+    ext.kotlin_version = '1.4.30'
     ext.hilt_version = '2.31.2-alpha'
     ext.cucumber_version = '4.4.+'
     ext.version_name = getVersionName()
