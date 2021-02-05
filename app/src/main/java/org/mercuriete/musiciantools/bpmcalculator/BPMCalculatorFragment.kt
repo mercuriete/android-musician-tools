@@ -34,7 +34,7 @@ class BPMCalculatorFragment @Inject constructor() : Fragment(), BPMCalculatorCon
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.button.setOnClickListener {
+        binding.tapMe.setOnClickListener {
             presenter.addBeat()
         }
     }

@@ -12,4 +12,16 @@ class MainActivityScreenRobot : GenericRobot() {
     fun canSeeAMessageOnBpmText(text: String) {
         genericAssertTextView(R.id.bpmText, text)
     }
+
+    fun clickOnBPMCalculatorButton() {
+        genericClickOnView(R.id.BPMCalculatorFragment)
+    }
+
+    fun clickOnAboutMeButton() {
+        genericClickOnView(R.id.AboutMeFragment)
+    }
+
+    fun clickOnTapMeButton() {
+        genericClickOnView(R.id.tapMe)
+    }
 }
