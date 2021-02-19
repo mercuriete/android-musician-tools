@@ -41,6 +41,6 @@ before_install:
   #- adb shell input keyevent 82 &
 
 script:
-  - ./gradlew -D sonar.scanner.force-deprecated-java-version-grace-period=true lint test jacocoTestReport sonarqube # Local unit test
+  - ./gradlew lint test jacocoTestReport # sonarqube # Local unit test
   # Temporarily disable emulator based tests
   # - ./gradlew connectedAndroidTest # Instrumented unit test
