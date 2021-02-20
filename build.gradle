@@ -54,6 +54,10 @@ apply plugin: "org.sonarqube"
 //sonar configuration
 sonarqube {
     properties {
+        property "sonar.organization", "mercuriete-github"
+        property "sonar.projectKey", "android-musician-tools"
+        property "sonar.host.url", "https://sonarcloud.io"
+
         property "sonar.projectVersion", project.version_name
         property "sonar.sourceEncoding", "UTF-8"
 
