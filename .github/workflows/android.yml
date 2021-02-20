@@ -22,7 +22,7 @@ jobs:
         java-version: 1.8
     - name: Build with Gradle
       run: ./gradlew lint test jacocoTestReport
-    - name: set up JDK 1.8
+    - name: set up JDK 11
       uses: actions/setup-java@v1.4.3
       with:
         java-version: 11
