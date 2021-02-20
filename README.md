@@ -6,6 +6,8 @@
 
 [![Build Status](https://dev.azure.com/mercuriete/mercuriete/_apis/build/status/mercuriete.android-musician-tools?branchName=master)](https://dev.azure.com/mercuriete/mercuriete/_build/latest?definitionId=3&branchName=master)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=android-musician-tools&metric=alert_status)](https://sonarcloud.io/dashboard?id=android-musician-tools)
+
 ### License
 GPLv3
 
