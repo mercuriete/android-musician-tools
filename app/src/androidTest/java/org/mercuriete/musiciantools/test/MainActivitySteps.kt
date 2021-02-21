@@ -16,18 +16,8 @@ class MainActivitySteps {
         robot.canSeeAMessageOnBpmText(text)
     }
 
-    @Then("^I click on bpm calculator button$")
-    fun i_click_on_bpm_calculator_button() {
-        robot.clickOnBPMCalculatorButton()
-    }
-
-    @Then("^I click on about me button$")
-    fun i_click_on_about_me_button() {
-        robot.clickOnAboutMeButton()
-    }
-
-    @Then("^I click on tap me button$")
-    fun i_click_on_tap_me_button() {
-        robot.clickOnTapMeButton()
+    @Then("^I click on \"(.*)\" view$")
+    fun i_click_on_view(resName: String) {
+        robot.genericClickOnView(resName);
     }
 }
