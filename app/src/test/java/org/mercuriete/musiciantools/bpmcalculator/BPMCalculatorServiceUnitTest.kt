@@ -1,7 +1,6 @@
 package org.mercuriete.musiciantools.bpmcalculator
 
 import org.junit.Assert
-import org.junit.Ignore
 import org.junit.Test
 
 const val DELTA = 0.5
@@ -23,7 +22,6 @@ class BPMCalculatorServiceUnitTest {
         Assert.assertEquals(0.0, actual, DELTA)
     }
 
-    @Ignore
     @Test
     fun calculate2Beat() {
         bpmCalculatorService.clear()
@@ -31,10 +29,9 @@ class BPMCalculatorServiceUnitTest {
         Thread.sleep(500)
         bpmCalculatorService.beat()
         val actual = bpmCalculatorService.getBPM()
-        Assert.assertEquals(120.0, actual, DELTA)
+        Assert.assertEquals(120.0, actual, 120.0*DELTA)
     }
 
-    @Ignore
     @Test
     fun calculate3Beat() {
         bpmCalculatorService.clear()
@@ -44,10 +41,9 @@ class BPMCalculatorServiceUnitTest {
         Thread.sleep(1000)
         bpmCalculatorService.beat()
         val actual = bpmCalculatorService.getBPM()
-        Assert.assertEquals(60.0, actual, DELTA)
+        Assert.assertEquals(60.0, actual, 60.0*DELTA)
     }
 
-    @Ignore
     @Test
     fun calculate4Beat() {
         bpmCalculatorService.clear()
@@ -59,10 +55,9 @@ class BPMCalculatorServiceUnitTest {
         Thread.sleep(210)
         bpmCalculatorService.beat()
         val actual = bpmCalculatorService.getBPM()
-        Assert.assertEquals(300.0, actual, DELTA)
+        Assert.assertEquals(300.0, actual, 300.0*DELTA)
     }
 
-    @Ignore
     @Test
     fun calculate10Beat() {
         bpmCalculatorService.clear()
@@ -72,6 +67,6 @@ class BPMCalculatorServiceUnitTest {
             bpmCalculatorService.beat()
         }
         val actual = bpmCalculatorService.getBPM()
-        Assert.assertEquals(300.0, actual, DELTA)
+        Assert.assertEquals(300.0, actual, 300.0*DELTA)
     }
 }
