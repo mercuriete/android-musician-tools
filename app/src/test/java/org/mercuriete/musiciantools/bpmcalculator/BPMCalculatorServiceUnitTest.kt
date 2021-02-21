@@ -1,6 +1,7 @@
 package org.mercuriete.musiciantools.bpmcalculator
 
 import org.junit.Assert
+import org.junit.Ignore
 import org.junit.Test
 
 const val DELTA = 0.5
@@ -22,6 +23,7 @@ class BPMCalculatorServiceUnitTest {
         Assert.assertEquals(0.0, actual, DELTA)
     }
 
+    @Ignore
     @Test
     fun calculate2Beat() {
         bpmCalculatorService.clear()
@@ -32,6 +34,7 @@ class BPMCalculatorServiceUnitTest {
         Assert.assertEquals(120.0, actual, DELTA)
     }
 
+    @Ignore
     @Test
     fun calculate3Beat() {
         bpmCalculatorService.clear()
@@ -44,6 +47,7 @@ class BPMCalculatorServiceUnitTest {
         Assert.assertEquals(60.0, actual, DELTA)
     }
 
+    @Ignore
     @Test
     fun calculate4Beat() {
         bpmCalculatorService.clear()
@@ -58,6 +62,7 @@ class BPMCalculatorServiceUnitTest {
         Assert.assertEquals(300.0, actual, DELTA)
     }
 
+    @Ignore
     @Test
     fun calculate10Beat() {
         bpmCalculatorService.clear()
