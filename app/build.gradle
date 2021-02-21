@@ -8,6 +8,8 @@ apply plugin: 'dagger.hilt.android.plugin'
 
 apply plugin: 'com.hiya.jacoco-android'
 
+apply plugin: 'io.gitlab.arturbosch.detekt'
+
 jacoco {
     toolVersion = "0.8.4"
 }
