@@ -49,6 +49,13 @@ android {
     }
 }
 
+afterEvaluate {
+    def task = tasks.getByName("jacocoTestDebugUnitTestReport") as JacocoReportBase
+    def tree = fileTree(buildDir)
+    tree.include("**/*.ec")
+    task.executionData(tree)
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
