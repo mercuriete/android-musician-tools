@@ -2,7 +2,7 @@ package org.mercuriete.musiciantools
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import dagger.hilt.android.AndroidEntryPoint
 import org.mercuriete.musiciantools.databinding.MainActivityBinding
@@ -16,7 +16,9 @@ class MainActivity : AppCompatActivity() {
         val binding = MainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navController = Navigation.findNavController(this, R.id.content)
-        NavigationUI.setupWithNavController(binding.navigation, navController)
+        NavigationUI.setupWithNavController(
+            binding.navigation,
+            (supportFragmentManager.findFragmentById(R.id.content) as NavHostFragment).navController
+        )
     }
 }
