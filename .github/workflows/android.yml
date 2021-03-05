@@ -21,7 +21,7 @@ jobs:
       with:
         java-version: 1.8
     - name: run instrumented tests
-      uses: reactivecircus/android-emulator-runner@v2.14.3
+      uses: reactivecircus/android-emulator-runner@v2.15.0
       with:
         api-level: 29
         script: ./gradlew connectedCheck
