@@ -11,13 +11,13 @@ class MainActivitySteps {
         robot.launchMainActivityScreen()
     }
 
-    @Then("^I expect to see \"(.*)\" text on \"(.*)\" TextView$")
-    fun i_expect_to_see_a_text_message_on_textView(text: String, textViewResName: String) {
-        robot.genericAssertTextView(textViewResName, text)
+    @Then("^I expect to see \"(.*)\" text$")
+    fun i_expect_to_see_a_text_message(text: String) {
+        robot.genericAssertTextView(text)
     }
 
     @Then("^I click on \"(.*)\" view$")
-    fun i_click_on_view(resName: String) {
-        robot.genericClickOnView(resName)
+    fun i_click_on_view(text: String) {
+        robot.genericClickOnView(text)
     }
 }
