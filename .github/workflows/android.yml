@@ -22,7 +22,7 @@ jobs:
         distribution: 'zulu'
         java-version: 8
     - name: run instrumented tests
-      uses: reactivecircus/android-emulator-runner@v2.15.0
+      uses: reactivecircus/android-emulator-runner@v2.16.0
       with:
         api-level: 29
         script: ./gradlew connectedCheck
