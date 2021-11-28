@@ -29,7 +29,7 @@ android {
     compileSdkVersion 31
     defaultConfig {
         applicationId "org.mercuriete.musiciantools"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 31
         versionCode project.version_code
         versionName project.version_name

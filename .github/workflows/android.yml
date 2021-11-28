@@ -24,7 +24,8 @@ jobs:
     - name: run instrumented tests
       uses: reactivecircus/android-emulator-runner@v2.21.0
       with:
-        api-level: 29
+        api-level: 31
+        arch: x86_64
         script: ./gradlew connectedCheck
     - name: run unitTest lint detekt and generate jacoco report
       run: ./gradlew lintDebug detektDebug testDebugUnitTest jacocoTestDebugUnitTestReport
