@@ -10,3 +10,7 @@ Feature: Do smoke test
         Then I click on "TAP ME" view
         Then I click on "TAP ME" view
         Then I click on "TAP ME" view
+        Then I click on "TAP ME" view
+        Then I click on "TAP ME" view
+        Then I click on "TAP ME" view
+        Then I click on "TAP ME" view
