@@ -15,7 +15,7 @@ buildscript {
     }
 
     ext.kotlin_version = '1.5.31'
-    ext.hilt_version = '2.40'
+    ext.hilt_version = '2.42'
     ext.cucumber_version = '4.4.+'
     ext.version_name = getVersionName()
     ext.version_code = getVersionCode()
