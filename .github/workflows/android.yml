@@ -22,7 +22,7 @@ jobs:
         distribution: 'zulu'
         java-version: 17
     - name: run instrumented tests
-      uses: reactivecircus/android-emulator-runner@v2.28.0
+      uses: reactivecircus/android-emulator-runner@v2.30.1
       with:
         api-level: 31
         arch: x86_64
