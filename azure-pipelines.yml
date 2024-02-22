@@ -19,7 +19,7 @@ steps:
           gradleWrapperFile: 'gradlew'
           gradleOptions: '-Xmx3072m'
           javaHomeOption: 'JDKVersion'
-          jdkVersionOption: '1.11'
+          jdkVersionOption: '17'
           jdkArchitectureOption: 'x64'
           tasks: 'assembleDebug'
       displayName: gradlew assembleDebug
